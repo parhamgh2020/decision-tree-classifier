@@ -15,11 +15,11 @@ def entropy(s):
 
 
 def gain(df1, df2, label):
-    gain_part1 = entrophy(df[label])
+    gain_part1 = entropy(df[label])
     n_df1, n_df2 = len(df1), len(df2)
     n_total = n_df1 + n_df2
-    df1_entropy = entrophy(df1.label.values)
-    df2_entropy = entrophy(df2.label.values)
+    df1_entropy = entropy(df1.label.values)
+    df2_entropy = entropy(df2.label.values)
     gain_part2 = (n_df1 / n_total * df1_entropy) + (n_df2 / n_total * df2_entropy)
     return gain_part1 - gain_part2
 
